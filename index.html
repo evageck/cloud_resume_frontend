@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eva Geck</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/visitor-counter.js"></script>
+    <script>
+        visitorCounter();
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #000;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin: 0;
+            color: #000;
+            display: inline;
+        }
+
+        .right-align {
+            float: right;
+            font-size: 14px;
+            color: #777;
+            font-style: italic;
+        }
+
+        .education-entry, .project-entry, .experience-entry {
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .job-title, .degree {
+            font-weight: bold;
+            font-size: 16px;
+            display: inline;
+        }
+
+        .date-location {
+            font-size: 14px;
+            color: #777;
+            float: right;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills-list li {
+            width: 45%;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Eva Geck</h1>
+    <p class="contact-info">Los Angeles, CA | evabgeck@gmail.com | (737) 600-6892 | 
+       <a href="https://www.linkedin.com/in/eva-geck" target="_blank">LinkedIn Profile</a>
+    </p>
+</header>
+
+<main>
+    <section class="section education">
+        <h2>Education</h2>
+        <div class="education-entry">
+            <h3>Loyola Marymount University</h3>
+            <span class="date-location">Los Angeles, CA | Graduation May 2025</span>
+            <div class="clear"></div>
+            <p class="degree">B.B.A Information Systems & Business Analytics Candidate</p>
+            <ul>
+                <li>Overall GPA: 3.93 | Major GPA: 3.98</li>
+                <li>Honors: Dean’s List (All Semesters), Beta Gamma Sigma Business Honor Society</li>
+                <li>Involvements: Delta Sigma Pi Professional Fraternity, ISBA Society, The Loft</li>
+                <li>Relevant Courses: Programming for Business Applications, Network and Cloud Computing, Database Management Systems, Analytics in Operations and Supply Chain, Business Information Technology, Financial Accounting, Managerial Accounting, Corporate Finance</li>
+            </ul>
+        </div>
+        <div class="education-entry">
+            <h3>Universidad de Loyola Andalucía</h3>
+            <span class="date-location">Sevilla, Spain | Feb 2024 - Jun 2024</span>
+            <div class="clear"></div>
+            <p class="degree">Study Abroad Program</p>
+            <ul>
+                <li>Enhanced cross-cultural skills through immersion in Spanish language and business courses</li>
+                <li>Collaborated with international students to develop business proposals for global companies</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section projects">
+        <h2>Portfolio Projects</h2>
+        <div class="project-entry">
+            <h3>Cloud Resume Challenge</h3>
+            <ul>
+                <li>Hosted resume in the cloud using AWS Cloud Services, Python, JSON, HTML, and CSS</li>
+                <li>Implemented HTTPS and least privilege access on S3, reducing data privacy and security risks</li>
+                <li>Engineered cloud infrastructure with IAM roles, logging, and monitoring to enforce best practices for compliance and auditing</li>
+            </ul>
+        </div>
+        <div class="project-entry">
+            <h3>Microsoft Access and SQL Project</h3>
+            <p><a href="https://github.com/evageck/SQL/blob/main/Geck%20Final%20Project.sql">View MySQL Workbench File</a></p>
+            <ul>
+                <li>Developed a Microsoft Access database to streamline entry and storage of customer and insurance information, enhancing accuracy for financial analysis</li>
+                <li>Presented the database in a user-friendly way to facilitate easy data entry of customer information</li>
+                <li>Utilized MySQL to store data for analysis and retrieval while maintaining relational integrity</li>
+            </ul>
+        </div>
+        <div class="project-entry">
+            <h3>Cisco Network Design and Configuration</h3>
+            <p><a href="https://github.com/evageck/System_Architecture_Diagram.pdf.git">Explore My Project's GitHub Repository</a></p>
+            <ul>
+                <li>Designed and implemented a Cisco-based network infrastructure with multiple subnets</li>
+                <li>Established secure inter-LAN connectivity and deployed critical services (DNS, HTTPS, DHCP)</li>
+                <li>Gained experience in risk assessment, proactive troubleshooting, and thorough documentation</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section skills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>AWS Cloud Services</li>
+            <li>Database Management: SQL, Microsoft Access</li>
+            <li>Python: OOP, Pandas, NumPy, Matplotlib</li>
+            <li>Tableau</li>
+            <li>Web Development: HTML, CSS</li>
+            <li>Network Design and Configuration</li>
+            <li>Cisco Packet Tracer</li>
+            <li>Excel (2016) Certified</li>
+        </ul>
+    </section>
+
+    <section class="section experience">
+        <h2>Leadership Experience</h2>
+        <div class="experience-entry">
+            <h3>Student Psychological Services</h3>
+            <span class="date-location">Los Angeles, CA | Aug 2023 - Jan 2024</span>
+            <div class="clear"></div>
+            <p class="degree">Wellness Educator</p>
+            <ul>
+                <li>Took pivotal role in creating promotional events to showcase LMU’s available resources</li>
+                <li>Created and delivered presentations addressing mental health services to student organizations</li>
+                <li>Received intensive training by licensed mental health professionals in conflict and crisis control</li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<p>Visitor #: <span id="visitor-counter"></span></p>
+
+<script>
+    visitorCounter();
+</script>
+
+</body>
+</html>
+
+
+
