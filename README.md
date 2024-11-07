@@ -1,4 +1,4 @@
-# Project Repository Documentation
+# Frontend Repository Documentation
 
 ## 1. GitHub Actions Workflow: `deploy-frontend.yml`
 
