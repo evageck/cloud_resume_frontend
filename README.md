@@ -8,8 +8,7 @@ Automates the deployment of a frontend application to an Amazon S3 bucket and ma
 ### How It Works
 - **Set-Up**: It uses `actions/checkout@v4` to clone the repository which provides access to project files for subsequent deployment steps.
 - **Sync Files to S3**: Synchronizes local files to the S3 bucket, deleting outdated files and excluding hidden `.git` files by using AWS credentials through GitHub secrets.
-- **Invalidate CloudFront Cache**: `aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"`
-- **Purpose**: This clears CloudFront cache to serve updated content again thorugh using AWS credentials stored through GitHub Secrets.
+- **Invalidate CloudFront Cache**: This clears CloudFront cache to serve updated content again thorugh using AWS credentials stored through GitHub Secrets.
 
 ### Benefits
 Ensures that updates pushed to `main` are automatically deployed and the credentials managed securely using GitHub secrets.
@@ -42,19 +41,10 @@ Integrating the `visitorCounter()` function into the webpage ensures the visitor
 ### Purpose
 Specifies files and directories that should be ignored by Git, preventing them from being tracked or committed.
 
-### Breakdown
-- **Logs**:
-  - `npm-debug.log*`, `yarn-debug.log*`, `yarn-error.log*`
-- **Dependency Directories**:
-  - `node_modules/`
-- **Build Directories**:
-  - `dist/`, `build/`
-- **Environment Variables**:
-  - `.env`
-- **MacOS Specific Files**:
-  - `.DS_Store`
-- **System Files**:
-  - `Thumbs.db`
+### How It Works
+- **Logs**: Files store logs generated during operations, especially during errors or debugging. Ignoring them helps keep the repository clean and avoids committing unnecessary log data.
+- **Dependency Directories**: This directory contains all the installed packages required for your project. It's ignored because it can be recreated using `package.json`, making it redundant to include in version control.
+- **Build Directories**: These directories hold the compiled output of your project. Since they can be regenerated during the build process, they are excluded from version control to avoid clutter.
 
 ### Benefits
 Keeps sensitive information like credentials out of version control, reduces repository size by excluding files that can be regenerated, and avoids clutter from system and build files.
@@ -64,7 +54,7 @@ Keeps sensitive information like credentials out of version control, reduces rep
 ## 5. Main HTML File: `index.html`
 
 ### Purpose
-Serves as the main webpage for Eva Geck’s personal portfolio, showcasing her skills, education, and projects.
+Serves as the main webpage for the Cloud Resume Challenge. 
 
 ### How It Works
 - **HTML**: DOCTYPE Declaration defines the document as HTML5.
