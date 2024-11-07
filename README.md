@@ -42,9 +42,9 @@ Integrating the `visitorCounter()` function into the webpage ensures the visitor
 Specifies files and directories that should be ignored by Git, preventing them from being tracked or committed.
 
 ### How It Works
-- **Logs**: Files store logs generated during operations, especially during errors or debugging. Ignoring them helps keep the repository clean and avoids committing unnecessary log data.
-- **Dependency Directories**: This directory contains all the installed packages required for your project. It's ignored because it can be recreated using `package.json`, making it redundant to include in version control.
-- **Build Directories**: These directories hold the compiled output of your project. Since they can be regenerated during the build process, they are excluded from version control to avoid clutter.
+- Files store logs generated during operations, especially during errors or debugging. Ignoring them helps keep the repository clean and avoids committing unnecessary log data.
+- This directory contains all the installed packages required for your project. It's ignored because it can be recreated using `package.json`, making it redundant to include in version control.
+- These directories hold the compiled output of your project. Since they can be regenerated during the build process, they are excluded from version control to avoid clutter.
 
 ### Benefits
 Keeps sensitive information like credentials out of version control, reduces repository size by excluding files that can be regenerated, and avoids clutter from system and build files.
