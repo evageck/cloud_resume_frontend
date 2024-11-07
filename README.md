@@ -1,33 +1,81 @@
-# Cloud Resume Challenge - Frontend
+Project Repository Overview
+1. Workflow: deploy-frontend.yml
+Location: .github/workflows/deploy-frontend.yml
 
-This repository contains the frontend components for the **Cloud Resume Challenge** project. The goal of this challenge is to create a cloud-based resume that demonstrates cloud infrastructure skills and web development expertise. This repository includes all necessary files and configurations for the frontend of the resume website.
+Purpose: This GitHub Actions workflow automates the deployment of a frontend application to an Amazon S3 bucket and manages the CloudFront distribution.
 
-## Overview
-The frontend of this project is designed to showcase a static website hosted on a cloud service, complete with HTML, CSS, and JavaScript files that provide the structure, style, and functionality of the site. This section explains the contents of the repository and their purposes.
+Overview:
 
-## Key Directories and Files
+Name: Deploy to S3
+Trigger: Runs when changes are pushed to the main branch.
+Job Definition: Runs in an ubuntu-latest environment.
+Detailed Steps:
 
-### 1. **.github/workflows**
-- **Purpose**: Contains GitHub Actions workflows for continuous integration and deployment.
-- **Key File**: `deploy-frontend.yml` – Automates the deployment process of the frontend to the cloud service.
+Checkout Repository:
+Uses actions/checkout@v4 to clone the repository's content, enabling subsequent steps to access the files.
+Sync Files to S3:
+Runs aws s3 sync to synchronize local project files to the specified S3 bucket, deleting obsolete files and excluding .git files.
+Uses GitHub secrets for AWS credentials and the S3 bucket name.
+Invalidate CloudFront Cache:
+Runs aws cloudfront create-invalidation to clear the CloudFront cache, ensuring updated files are served.
+Utilizes the CloudFront distribution ID and AWS credentials stored in GitHub secrets.
+Key Benefits:
 
-### 2. **images**
-- **Purpose**: Stores image assets used in the frontend of the resume website.
-- **Contents**: Various image files for site design and content enhancement.
+Facilitates continuous delivery by automating the deployment process whenever a push to main is detected.
+2. Images Folder
+Purpose: Contains image assets, such as the LMU logo, used for testing and displaying content on the website.
 
-### 3. **js**
-- **Purpose**: Contains JavaScript files that add interactivity to the website.
-- **Key Script**: Functions that handle dynamic content loading, form validation, and other client-side behaviors.
+3. JavaScript: visitor-counter.js
+Location: js/visitor-counter.js
 
-### 4. **.gitignore**
-- **Purpose**: Specifies intentionally untracked files to ignore in the repository.
-- **Example**: Lists files or folders that should not be included in version control (e.g., node_modules, build outputs).
+Purpose: This JavaScript function retrieves and displays the visitor count from an API endpoint.
 
-### 5. **index.html**
-- **Purpose**: The main HTML file that serves as the entry point of the website.
-- **Description**: Contains the structure of the webpage, references to CSS and JavaScript, and essential HTML content.
+Function Overview:
 
-## How to Use This Repository
-1. **Clone the Repository**:
-   ```bash
-   git clone git@github.com:YOUR_USERNAME/cloud_resume_challenge.git
+Function Name: visitorCounter()
+API Endpoint: https://ohsaui5mib.execute-api.us-east-1.amazonaws.com/visitorCounter
+How It Works:
+
+fetch():
+Initiates a GET request to the API endpoint to retrieve visitor data.
+.then(response => response.text()):
+Converts the response to text format for processing.
+.then((body) => {...}):
+Updates the HTML element with id="visitor-counter" to display the visitor count.
+4. .gitignore File
+Purpose: Specifies files and directories for Git to ignore, preventing them from being tracked or committed.
+
+Breakdown:
+
+Logs:
+npm-debug.log*, yarn-debug.log*, yarn-error.log*
+Dependency Directories:
+node_modules/
+Build Directories:
+dist/, build/
+Environment Variables:
+.env
+MacOS Specific Files:
+.DS_Store
+System Files:
+Thumbs.db
+Purpose:
+
+Security and Privacy: Keeps sensitive data secure by ignoring .env files.
+Size Management: Excludes node_modules/ and build directories to keep the repo size manageable.
+Clutter Reduction: Prevents system-specific files from cluttering the project.
+5. index.html File
+Purpose: Main webpage for Eva Geck’s personal portfolio.
+
+Structure Overview:
+
+DOCTYPE Declaration: Declares HTML5.
+HTML Elements:
+<head>: Contains metadata, links to CSS and JavaScript, and inline CSS.
+<body>: Main content including the header, sections, and footer.
+Inline Script:
+
+Calls the visitorCounter() function to display the visitor count on page load.
+Inline CSS:
+
+Styles for body, headers, contact info, sections, lists, and other elements.
